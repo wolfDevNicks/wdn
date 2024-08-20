@@ -1,0 +1,213 @@
+/* 전체 레이아웃 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #36393f;
+}
+
+#app {
+    width: 100%;
+    max-width: 600px;
+    background: #2f3136;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#chatHeader {
+    background-color: #202225;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 1px solid #202225;
+}
+
+/* 채팅 영역 */
+#chat {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #36393f;
+    color: #dcddde;
+}
+
+/* 메시지 버블 스타일 */
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #40444b;
+    border-radius: 5px;
+    position: relative;
+    min-height: 50px; /* 최소 높이 설정 */
+}
+
+/* 메시지 내용 */
+.message-content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px; /* 오른쪽 버튼 여백 */
+    max-width: calc(100% - 40px); /* 버튼 영역을 고려한 최대 너비 */
+}
+
+/* 메시지 이미지 */
+.message img {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* 메시지 텍스트 */
+.message span {
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+/* 버튼 스타일 */
+.message-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 100%;
+    display: none; /* 버튼 숨기기 */
+}
+
+.message:hover .message-buttons {
+    display: flex; /* 마우스 오버 시 버튼 표시 */
+}
+
+.edit-btn, .delete-btn {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 0.9em;
+    color: #b9bbbe;
+    margin-bottom: 5px; /* 버튼 사이의 간격 */
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    color: white;
+}
+
+.edit-btn {
+    color: #7289da;
+}
+
+.delete-btn {
+    color: #f04747;
+}
+
+/* 입력 컨테이너 */
+#inputContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #202225;
+    border-top: 1px solid #202225;
+}
+
+/* 이미지 미리보기 컨테이너 */
+#imagePreviewContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#imagePreview {
+    max-width: 100px;
+    max-height: 100px;
+    display: none;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 2px solid #7289da;
+}
+
+#removeImageBtn {
+    background-color: #f04747;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#removeImageBtn:hover {
+    background-color: #d43f3a;
+}
+
+/* 메시지 입력 컨테이너 */
+#messageContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* 입력 필드 */
+#messageInput {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #40444b;
+    color: white;
+    margin-right: 10px;
+}
+
+#messageInput::placeholder {
+    color: #b9bbbe;
+}
+
+/* 버튼 컨테이너 */
+#controls {
+    display: flex;
+    align-items: center;
+}
+
+#imageInput {
+    display: none;
+}
+
+#uploadImageBtn {
+    background-color: #7289da;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#uploadImageBtn:hover {
+    background-color: #5b6eae;
+}
+
+#sendBtn {
+    padding: 10px 15px;
+    background-color: #7289da;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sendBtn:hover {
+    background-color: #5b6eae;
+}

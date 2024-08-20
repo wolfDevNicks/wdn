@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDN chatting app</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="chatHeader">히든 채팅방</div>
+        <div id="chat"></div>
+        <div id="inputContainer">
+            <div id="imagePreviewContainer">
+                <img id="imagePreview" src="" alt="Image preview">
+                <button id="removeImageBtn" class="hidden">Remove Image</button>
+            </div>
+            <div id="messageContainer">
+                <input id="messageInput" type="text" placeholder="Type a message...">
+                <div id="controls">
+                    <input type="file" id="imageInput" class="hidden">
+                    <button id="uploadImageBtn">Upload Image</button>
+                    <button id="sendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
